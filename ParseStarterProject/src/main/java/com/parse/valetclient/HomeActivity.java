@@ -312,7 +312,7 @@ public class HomeActivity extends AppCompatActivity {
         printFloating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences.Editor editor = PrintActivity.sharedPreferences.edit();
+                SharedPreferences.Editor editor = LoginActivity.sharedPreferences.edit();
                 editor.putString("printer", null);
                 editor.commit();
 

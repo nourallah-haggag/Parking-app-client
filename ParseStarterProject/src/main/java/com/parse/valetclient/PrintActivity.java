@@ -245,7 +245,7 @@ public class PrintActivity extends AppCompatActivity {
         setContentView(R.layout.activity_print);
 
         // init the shared preferences
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences = LoginActivity.sharedPreferences;
 
         // check shared preferences value if default is set print right away and hide the list
         // if not show the list and let the user select
@@ -501,7 +501,13 @@ public class PrintActivity extends AppCompatActivity {
     public  void print(View v)
     {
        // Toast.makeText(this, ""+amount, Toast.LENGTH_SHORT).show();
-        generateSmsCode();
+        if(SelectedBDAddress.equals(""))
+        {
+            Toast.makeText(this, "please select a bluetooth printer", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            generateSmsCode();
+        }
 
 
 
